@@ -47,7 +47,7 @@ class LS7366R_Lib{
     public:
 
         LS7366R_Lib(int chip);
-        void begin();  //Prepares the LS7366R for communication with the previously set user parameters. (set_MDR0, set_MDR1, set_Speed)
+        void begin();  //Prepares the LS7366R for communication with the previously set user parameters. (set_Speed)
 
         void clear_MDR0();
         void clear_MDR1();
@@ -68,10 +68,12 @@ class LS7366R_Lib{
         void load_OTR();
 
         void set_Speed(int spd);
+        uint32_t recieve_bytes();
 
     private:
 
         int spiSpeed;  //SPI communication speed in hz.
         int chipSelect;
+        byte addressSize;
 
 };
