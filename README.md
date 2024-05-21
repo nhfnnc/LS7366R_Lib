@@ -13,19 +13,19 @@ Download this repository as a ZIP file.  Then within the Arduino IDE import he l
     uint32_t testInt = 1000;  // Value to start the counter at.
 
     void setup() {
-    Serial.begin(115200);
-    encoder.begin();
-    encoder.set_MDR0(x4, free_run, disable_index, async, filter_1);
-    encoder.set_MDR1(byte_4, count_ena, nop, nop, nop, nop);
-    encoder.clear_CNTR();
-    encoder.set_DTR(testInt);  
-    encoder.load_CNTR();  // Sets the counter to start at 1,000.
+        Serial.begin(115200);
+        encoder.begin();
+        encoder.set_MDR0(x4, free_run, disable_index, async, filter_1);
+        encoder.set_MDR1(byte_4, count_ena, nop, nop, nop, nop);
+        encoder.clear_CNTR();
+        encoder.set_DTR(testInt);  
+        encoder.load_CNTR();  // Sets the counter to start at 1,000.
     }
 
     void loop() {
-    encoder.load_OTR();
-    Serial.println(encoder.get_OTR());
-    delay(1000);
+        encoder.load_OTR();
+        Serial.println(encoder.get_OTR());
+        delay(1000);
     }
 ```
 ## Usage
