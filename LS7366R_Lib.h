@@ -87,12 +87,13 @@ class LS7366R_Lib{
         void load_OTR();
 
         void set_Speed(int spd);
-        uint32_t recieve_bytes();
 
     private:
 
         int spiSpeed;  //SPI communication speed in hz.
         int chipSelect;
         byte addressSize;
+        
+        uint32_t recieve_bytes();
 
 };
